@@ -1,22 +1,46 @@
 /* eslint-disable react/jsx-key */
 import { Button } from "frames.js/next";
 import { frames } from "./frames";
+import { BackgroundImage } from "./components/background-image";
+
+const images = [
+  "fcimage1.jpg",
+  "fcimage2.jpg",
+  "fcimage3.jpg",
+  "fcimage4.jpg",
+  "fcimage5.jpg",
+  "fcimage6.jpg",
+  "fcimage7.jpg",
+];
+
+const baseUrl = process.env.BASE_URL || "http://localhost:3000"; // Base URL for the app
 
 const handleRequest = frames(async (ctx) => {
+  // Determine current image index based on query param or default to the first image
+  const currentIndex = parseInt(ctx.searchParams.index || "0", 10);
+  const totalImages = images.length;
+
+  // Handle index wrapping
+  const nextIndex = (currentIndex + 1) % totalImages;
+  const prevIndex = (currentIndex - 1 + totalImages) % totalImages;
+
   return {
     image: (
-      <span >
-        {ctx.pressedButton
-          ? ` ${ctx.searchParams.value} World `
-          : `First Frame to Print Hello or Henlo`}
-      </span>
+      // <div className="flex flex-col items-center">
+        <BackgroundImage
+          src={`${baseUrl}/${images[currentIndex]}`} // Dynamically pick image by index
+          width="955px"
+          height="full"
+        />
+      //  <span>{`Displaying Image ${currentIndex + 1} of ${totalImages}`}</span>
+      // </div>
     ),
     buttons: [
-      <Button action="post" target={{ query: { value: "Hello " } }}>
-        Hello
+      <Button action="post" target={{ query: { index: prevIndex.toString() } }}>
+        Previous
       </Button>,
-      <Button action="post" target={{ query: { value: "Henlo" } }}>
-        Henlo
+      <Button action="post" target={{ query: { index: nextIndex.toString() } }}>
+        Next
       </Button>,
     ],
   };
