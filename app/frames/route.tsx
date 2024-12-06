@@ -29,8 +29,6 @@ const handleRequest = frames(async (ctx) => {
       // <div className="flex flex-col items-center">
         <BackgroundImage
           src={`${baseUrl}/${images[currentIndex]}`} // Dynamically pick image by index
-          width="955px"
-          height="full"
         />
       //  <span>{`Displaying Image ${currentIndex + 1} of ${totalImages}`}</span>
       // </div>
