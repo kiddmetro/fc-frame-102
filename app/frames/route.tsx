@@ -26,12 +26,9 @@ const handleRequest = frames(async (ctx) => {
 
   return {
     image: (
-      // <div className="flex flex-col items-center">
         <BackgroundImage
           src={`${baseUrl}/${images[currentIndex]}`} // Dynamically pick image by index
         />
-      //  <span>{`Displaying Image ${currentIndex + 1} of ${totalImages}`}</span>
-      // </div>
     ),
     buttons: [
       <Button action="post" target={{ query: { index: prevIndex.toString() } }}>
