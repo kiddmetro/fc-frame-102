@@ -1,22 +1,22 @@
-# Hello & Henlo Frame
+# DC & Marvel Comics Character Frame
 
-This is a simple project built using **Next.js** and **Frame.js**, which displays two messages: "Hello World" and "Henlo World". It's a minimalistic implementation to get started with these frameworks.
+This project is a simple implementation built with **Next.js** and **Frame.js**. It showcases 7 DC and Marvel comics characters with navigation functionality.
 
 ## Features
-- Displays "Hello World" and "Henlo World" on the screen.
-- Built with modern frameworks: [Next.js](https://nextjs.org/) for server-side rendering and [Frame.js](https://framejs.dev/) for lightweight UI development.
-
+- Navigate between 7 DC and Marvel characters using "Previous" and "Next" buttons.
+- Built using Next.js for server-side rendering and Frame.js for lightweight UI development.
 
 ## Prerequisites
-Ensure you have the following installed:
+Make sure you have the following installed:
 - Node.js (v16 or higher)
 - npm or yarn package manager
+
 
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/kiddmetro/https://fc-frame-101.git
-   cd fc-frame-101
+   git clone https://github.com/kiddmetro/https://comic-image.git
+   cd comic-image
 
 2. Install dependencies:
     ```bash
@@ -36,6 +36,6 @@ Ensure you have the following installed:
 4. Run debugger
 
     ```bash
-    frame
+    frames
 
 
